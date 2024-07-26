@@ -1,4 +1,4 @@
-import { Inject, Injectable, NotFoundException } from '@nestjs/common';
+import { Inject, Injectable } from '@nestjs/common';
 import BookRepository, {
   BookRepositoryInterface,
 } from '../../domain/bookRepository';
@@ -13,10 +13,5 @@ export default class SearchOneBookById {
 
   async run(id: string): Promise<BookDto> {
     // TODO
-    const book = await this.bookRepository.searchOneById(id);
-    if (!book) {
-      throw new NotFoundException();
-    }
-    return BookDto.fromEntity(book);
   }
 }
