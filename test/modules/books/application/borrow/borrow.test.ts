@@ -2,15 +2,15 @@ import { Test } from '@nestjs/testing';
 import { BookRepositoryInterface } from 'src/modules/books/domain/bookRepository';
 import BookRepositoryMock from '../../__mocks__/BookRepositoryMock';
 import BookMother from '../../domain/bookMother';
-import BorrowBook from 'src/modules/books/application/borrow/borrow';
 import { LoanRepositoryInterface } from 'src/modules/loans/domain/loanRepository';
 import { UserRepositoryInterface } from 'src/modules/users/domain/userRepository';
 import UserRepositoryMock from '../../../users/__mocks__/UserRepositoryMock';
 import UserMother from 'test/modules/users/domain/userMother';
 import { FindManyOptions } from 'typeorm';
 import { LoanEntity } from 'src/modules/loans/domain/loan.entity';
-import LoanRepositoryMock from 'test/modules/loans/__mocks__/loanRepositoryMock';
+import LoanRepositoryMock from 'test/modules/loans/__mocks__/LoanRepositoryMock';
 import { ConflictException, ForbiddenException } from '@nestjs/common';
+import BorrowBook from 'src/modules/books/application/borrow/borrow';
 
 describe('Borrow Book Test Suite', () => {
   let borrowBook: BorrowBook;
