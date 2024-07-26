@@ -8,4 +8,13 @@ export class BookDto implements BookEntity {
   public author: string;
 
   public publishedDate: Date;
+
+  constructor(book: BookEntity) {
+    Object.assign(book);
+    this.id = book.id;
+  }
+
+  static fromEntity(book: BookEntity): BookDto {
+    return new BookDto(book);
+  }
 }
